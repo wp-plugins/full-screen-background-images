@@ -11,6 +11,7 @@
   Requires at least: 2.9.0
   Tested up to: 3.5.1
   Stable tag: 0.1
+  Version: 0.1
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
