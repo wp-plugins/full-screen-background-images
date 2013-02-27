@@ -1,4 +1,4 @@
-=== Full Screen Backgrounds ===
+=== Full Screen Background Images ===
 Plugin Name: Full Screen Background Images
 Plugin URI: http://wordpress.org/extend/plugins/full-screen-background-images/
 Author URI: http://www.kouratoras.gr
@@ -16,9 +16,10 @@ Full Screen Background Images Plugin creates an image slideshow as a background 
 
 == Description ==
 
-Full Screen Backgrounds Plugin creates an image slideshow as a background to your website.
+Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
 = Features: =
+
 * Multiple images select
 
 == Installation ==
