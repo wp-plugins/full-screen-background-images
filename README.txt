@@ -21,6 +21,7 @@ Full Screen Background Images Plugin creates an image slideshow as a background 
 = Features: =
 
 * Multiple images select
+* Transition between background images
 
 == Installation ==
 
