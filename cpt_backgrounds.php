@@ -33,7 +33,7 @@ function cpt_background_init() {
 		'title',
 		'thumbnail'
 	    ),
-	    'menu_icon' => plugins_url(PLUGIN_DIR_NAME.'/img/backgrounds.png'),
+	    'menu_icon' => 'dashicons-format-gallery',
 	);
 
 	register_post_type('cpt_background', $args);

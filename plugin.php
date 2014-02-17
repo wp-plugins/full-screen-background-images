@@ -8,10 +8,10 @@
   Contributors: kouratoras
   Donate link:
   Tags: full, screen, background, images
-  Requires at least: 2.9.0
-  Tested up to: 3.5.1
-  Stable tag: 0.1
-  Version: 0.1
+  Requires at least: 3.2
+  Tested up to: 3.8.1
+  Stable tag: 0.2
+  Version: 0.2
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
@@ -51,7 +51,7 @@ class FullScreenBackground {
 		add_action('wp_enqueue_scripts', array(&$this, 'register_plugin_scripts'));
 		add_action('wp_enqueue_scripts', array(&$this, 'register_plugin_styles'));
 
-		add_action('wp_head', array(&$this, 'plugin_init'));		
+		add_action('wp_head', array(&$this, 'plugin_init'));
 	}
 
 	/* -------------------------------------------------- */
@@ -115,7 +115,7 @@ class FullScreenBackground {
 				// Functionality
 				slide_interval          :   3000,
 				transition              :   1, 
-				transition_speed		:	700,
+				transition_speed		:	300,
 
 				// Components							
 				slide_links				:	"blank",
@@ -138,7 +138,6 @@ class FullScreenBackground {
 
 		echo $script_code;
 	}
-
 }
 
 new FullScreenBackground();
