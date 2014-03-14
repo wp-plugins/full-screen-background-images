@@ -10,8 +10,8 @@
   Tags: full, screen, background, images
   Requires at least: 3.2
   Tested up to: 3.8.1
-  Stable tag: 0.2
-  Version: 0.2
+  Stable tag: 0.2.1
+  Version: 0.2.1
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
@@ -130,7 +130,7 @@ class FullScreenBackground {
 				}
 			endwhile;
 		endif;
-
+		$script_code = substr($script_code, 0 , -1);
 		$script_code .= ']		
 			});
 		});

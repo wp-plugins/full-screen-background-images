@@ -8,8 +8,8 @@ Donate link:
 Tags: full, screen, background, images
 Requires at least: 3.2
 Tested up to: 3.8.1
-Stable tag: 0.2
-Version: 0.2
+Stable tag: 0.2.1
+Version: 0.2.1
 License: GPLv2 or later
 
 Full Screen Background Images Plugin creates an image slideshow as a background to your website.
@@ -44,6 +44,9 @@ There is no limit in the images amount
 2. Full Screen Background Images in action
 
 == Changelog ==
+
+= 0.2.1 = 
+* IE7/8 bug fix
 
 = 0.2 = 
 * Minor fixes
