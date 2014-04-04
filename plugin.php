@@ -10,8 +10,8 @@
   Tags: full, screen, background, images
   Requires at least: 3.2
   Tested up to: 3.8.1
-  Stable tag: 0.2.1
-  Version: 0.2.1
+  Stable tag: 0.2.2
+  Version: 0.2.2
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
@@ -99,8 +99,7 @@ class FullScreenBackground {
 
 		$args = array(
 		    'post_type' => 'cpt_background',
-		    'posts_per_page' => 999,
-		    //'fields' => 'ids',
+		    'posts_per_page' => -1,
 		    'update_post_term_cache' => false, // don't retrieve post terms
 		    'update_post_meta_cache' => false, // don't retrieve post meta
 		);
@@ -115,17 +114,17 @@ class FullScreenBackground {
 				// Functionality
 				slide_interval          :   3000,
 				transition              :   1, 
-				transition_speed		:	300,
+				transition_speed	:	300,
 
 				// Components							
-				slide_links				:	"blank",
-				slides 					:  	[';
+				slide_links		:	"blank",
+				slides 			:  	[';
 
 		if ($the_query->have_posts()) :
 
 			while ($the_query->have_posts()) : $the_query->the_post();	
 				if (has_post_thumbnail()) {
-					$image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'full_screen_background');
+					$image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full_screen_background');
 					$script_code .= '{image : "' . $image_url[0] .'", title : "' . get_the_title() . '"},';
 				}
 			endwhile;
@@ -137,6 +136,8 @@ class FullScreenBackground {
 		</script>';
 
 		echo $script_code;
+		
+		wp_reset_query();
 	}
 }
 
