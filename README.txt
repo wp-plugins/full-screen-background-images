@@ -7,7 +7,7 @@ Contributors: kouratoras
 Donate link: 
 Tags: full, screen, background, images
 Requires at least: 3.2
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 0.2.2
 Version: 0.2.2
 License: GPLv2 or later
