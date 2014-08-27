@@ -7,9 +7,9 @@ Contributors: kouratoras
 Donate link: 
 Tags: full, screen, background, images
 Requires at least: 3.2
-Tested up to: 3.9
-Stable tag: 0.2.2
-Version: 0.2.2
+Tested up to: 4.0
+Stable tag: 0.2.3
+Version: 0.2.3
 License: GPLv2 or later
 
 Full Screen Background Images Plugin creates an image slideshow as a background to your website.
@@ -44,6 +44,9 @@ There is no limit in the images amount
 2. Full Screen Background Images in action
 
 == Changelog ==
+
+= 0.2.3 =
+* Compatibility with WordPress 4.0
 
 = 0.2.2 =
 * minor bug fixes
