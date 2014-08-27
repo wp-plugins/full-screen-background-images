@@ -1,5 +1,4 @@
 <?php
-
 /*
   Plugin Name: Full Screen Background Images
   Plugin URI: http://wordpress.org/extend/plugins/full-screen-background-images/
