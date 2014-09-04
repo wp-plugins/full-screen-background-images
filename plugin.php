@@ -44,7 +44,7 @@ class FullScreenBackground {
 		load_plugin_textdomain('full-screen-background-locale', false, plugin_dir_path(__FILE__) . '/lang/');
 
 		//Backgrounds custom post type
-		require_once( plugin_dir_path(__FILE__) . 'cpt_backgrounds.php' );
+		require_once( plugin_dir_path(__FILE__) . '/lib/cpt_backgrounds.php' );
 
 		//Register scripts and styles
 		add_action('wp_enqueue_scripts', array(&$this, 'register_plugin_scripts'));
