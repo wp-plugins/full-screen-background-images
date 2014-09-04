@@ -47,6 +47,7 @@ There is no limit in the images amount
 
 = 0.2.3 =
 * Compatibility with WordPress 4.0
+* Minor fix
 
 = 0.2.2 =
 * minor bug fixes
