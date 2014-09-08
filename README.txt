@@ -57,7 +57,8 @@ There is no limit in the images amount
 == Screenshots ==
 
 1. Entries for background images in the admin panel
-2. Full Screen Background Images in action
+2. Options page
+3. Full Screen Background Images in action
 
 == Changelog ==
 
