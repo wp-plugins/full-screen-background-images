@@ -8,8 +8,8 @@ Donate link:
 Tags: full, screen, background, images
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 0.2.3
-Version: 0.2.3
+Stable tag: 0.3
+Version: 0.3
 License: GPLv2 or later
 
 Full Screen Background Images Plugin creates an image slideshow as a background to your website.
@@ -21,7 +21,23 @@ Full Screen Background Images Plugin creates an image slideshow as a background 
 = Features: =
 
 * Multiple images select
-* Transition between background images
+* Custom post type for easy images manipulation
+* Multiple options to set up the slideshow fit your needs
+
+= Options: =
+
+* Autoplay: Determines whether slideshow begins playing when page is loaded.
+* Fit always: Prevents the image from ever being cropped. Ignores minimum width and height.
+* Horizontal center: Centers image horizontally. When turned off, the images resize/display from the left of the page.
+* Vertical center: Centers image vertically. When turned off, the images resize/display from the top of the page.
+* Keyboard Navigation: Allows control via keyboard (Spacebar: Pause or play - Right or Up Arrow: Next slide - Left or Down Arrow: Previous slide).
+* Min Width: Minimum width the image is allowed to be. If it is met, the image won't size down any further.
+* Min Height: Minimum height the image is allowed to be. If it is met, the image won't size down any further.
+* Pause on Hover: Pauses slideshow while current image hovered over.
+* Random Slides: Slides are shown in a random order. start_slide is disregarded.
+* Slides Interval: Time between slide changes in milliseconds.
+* Transition Slides: Controls which effect is used to transition between slides.
+* Transition Speed: Speed of transitions in milliseconds.
 
 == Installation ==
 
@@ -44,6 +60,9 @@ There is no limit in the images amount
 2. Full Screen Background Images in action
 
 == Changelog ==
+
+= 0.3 =
+* Added options page
 
 = 0.2.3 =
 * Compatibility with WordPress 4.0

@@ -9,8 +9,8 @@
   Tags: full, screen, background, images
   Requires at least: 3.2
   Tested up to: 4.0
-  Stable tag: 0.2.3
-  Version: 0.2.3
+  Stable tag: 0.3
+  Version: 0.3
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
@@ -33,6 +33,9 @@
 define('PLUGIN_DIR_NAME', 'full-screen-background-images');
 
 class FullScreenBackground {
+	
+	private $settings;
+	
 	/* -------------------------------------------------- */
 	/* Constructor
 	  /*-------------------------------------------------- */
@@ -41,10 +44,16 @@ class FullScreenBackground {
 
 		register_activation_hook(__FILE__, array($this, 'plugin_activation'));
 
-		load_plugin_textdomain('full-screen-background-locale', false, plugin_dir_path(__FILE__) . '/lang/');
+		load_plugin_textdomain('fsbi', false, plugin_dir_path(__FILE__) . '/lang/');
+		
+		//Fetch settings
+		$this->settings = get_option('fsbi_settings');
 
 		//Backgrounds custom post type
 		require_once( plugin_dir_path(__FILE__) . '/lib/cpt_backgrounds.php' );
+		
+		//Options Page
+		require_once( plugin_dir_path(__FILE__) . '/lib/options.php' );
 
 		//Register scripts and styles
 		add_action('wp_enqueue_scripts', array(&$this, 'register_plugin_scripts'));
@@ -95,6 +104,19 @@ class FullScreenBackground {
 	}
 
 	public function plugin_init($content) {
+				
+		$fsbi_autoplay = ($this->settings['autoplay'] ? $this->settings['autoplay'] : '1');
+		$fsbi_fit_always = ($this->settings['fit_always'] ? $this->settings['fit_always'] : '0');
+		$fsbi_horizontal_center = ($this->settings['horizontal_center'] ? $this->settings['horizontal_center'] : '0');
+		$fsbi_vertical_center = ($this->settings['vertical_center'] ? $this->settings['vertical_center'] : '1');
+		$fsbi_keyboard_nav = ($this->settings['keyboard_nav'] ? $this->settings['keyboard_nav'] : '0');
+		$fsbi_min_height = ($this->settings['min_height'] ? $this->settings['min_height'] : '0');
+		$fsbi_min_width = ($this->settings['min_width'] ? $this->settings['min_width'] : '0');
+		$fsbi_pause_hover = ($this->settings['pause_hover'] ? $this->settings['pause_hover'] : '0');
+		$fsbi_random = ($this->settings['random'] ? $this->settings['random'] : '0');
+		$fsbi_slide_interval = ($this->settings['slide_interval'] ? $this->settings['slide_interval'] : '5000');
+		$fsbi_transition = ($this->settings['transition'] ? $this->settings['transition'] : '1');
+		$fsbi_transition_speed = ($this->settings['transition_speed'] ? $this->settings['transition_speed'] : '750');
 
 		$args = array(
 		    'post_type' => 'cpt_background',
@@ -110,14 +132,21 @@ class FullScreenBackground {
 
 			$.supersized({
 
-				// Functionality
-				slide_interval          :   3000,
-				transition              :   1, 
-				transition_speed	:	300,
-
-				// Components							
+				autoplay		:   '.$fsbi_autoplay.',
+				fit_always		:   '.$fsbi_fit_always.',
+				horizontal_center	:   '.$fsbi_horizontal_center.',
+				vertical_center		:   '.$fsbi_vertical_center.',
+				keyboard_nav		:   '.$fsbi_keyboard_nav.',
+				min_height		:   '.$fsbi_min_height.',
+				min_width		:   '.$fsbi_min_width.',
+				pause_hover		:   '.$fsbi_pause_hover.',
+				random			:   '.$fsbi_random.',
+				slide_interval		:   '.$fsbi_slide_interval.',
+				transition		:   "'.$fsbi_transition.'",
+				transition_speed	:   '.$fsbi_transition_speed.',
+				
 				slide_links		:	"blank",
-				slides 			:  	[';
+				slides 			:	[';
 
 		if ($the_query->have_posts()) :
 
