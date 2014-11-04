@@ -134,10 +134,10 @@ function fsbi_autoplay_render(  ) {
 
 	$options = get_option( 'fsbi_settings' );
 	?>
-	<select name='fsbi_settings[fsbi_autoplay]'>
-		<option value='1' <?php selected( $options['fsbi_autoplay'], '1' ); ?>><?php _e('Yes', 'fsbi'); ?></option>
-		<option value='0' <?php selected( $options['fsbi_autoplay'], '0' ); ?>><?php _e('No', 'fsbi'); ?></option>
-	</select>
+	<select name='fsbi_settings[autoplay]'>
+        <option value='1' <?php selected( $options['autoplay'], '1' ); ?>><?php _e('Yes', 'fsbi'); ?></option>
+        <option value='0' <?php selected( $options['autoplay'], '0' ); ?>><?php _e('No', 'fsbi'); ?></option>
+    </select>
 	<?php
 	echo '<span style="font-size:11px;font-style:italic;">'.__('Determines whether slideshow begins playing when page is loaded.' , 'fsbi').'</span>';
 

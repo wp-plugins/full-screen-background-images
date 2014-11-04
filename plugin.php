@@ -8,9 +8,9 @@
   Donate link:
   Tags: full, screen, background, images
   Requires at least: 3.2
-  Tested up to: 4.0
-  Stable tag: 0.3
-  Version: 0.3
+  Tested up to: 4.1
+  Stable tag: 0.3.1
+  Version: 0.3.1
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
@@ -105,10 +105,10 @@ class FullScreenBackground {
 
 	public function plugin_init($content) {
 				
-		$fsbi_autoplay = ($this->settings['autoplay'] ? $this->settings['autoplay'] : '1');
+		$fsbi_autoplay = ($this->settings['autoplay'] ? $this->settings['autoplay'] : '0');
 		$fsbi_fit_always = ($this->settings['fit_always'] ? $this->settings['fit_always'] : '0');
 		$fsbi_horizontal_center = ($this->settings['horizontal_center'] ? $this->settings['horizontal_center'] : '0');
-		$fsbi_vertical_center = ($this->settings['vertical_center'] ? $this->settings['vertical_center'] : '1');
+		$fsbi_vertical_center = ($this->settings['vertical_center'] ? $this->settings['vertical_center'] : '0');
 		$fsbi_keyboard_nav = ($this->settings['keyboard_nav'] ? $this->settings['keyboard_nav'] : '0');
 		$fsbi_min_height = ($this->settings['min_height'] ? $this->settings['min_height'] : '0');
 		$fsbi_min_width = ($this->settings['min_width'] ? $this->settings['min_width'] : '0');
