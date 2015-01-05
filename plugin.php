@@ -9,8 +9,8 @@
   Tags: full, screen, background, images
   Requires at least: 3.2
   Tested up to: 4.1
-  Stable tag: 0.3.1
-  Version: 0.3.1
+  Stable tag: 0.3.2
+  Version: 0.3.2
   License: GPLv2 or later
   Description: Full Screen Background Images Plugin creates an image slideshow as a background to your website.
 
@@ -54,6 +54,9 @@ class FullScreenBackground {
 		
 		//Options Page
 		require_once( plugin_dir_path(__FILE__) . '/lib/options.php' );
+		
+		//Action links
+		add_filter('plugin_action_links', array(&$this, 'plugin_action_links'), 10, 2);
 
 		//Register scripts and styles
 		add_action('wp_enqueue_scripts', array(&$this, 'register_plugin_scripts'));
@@ -70,6 +73,27 @@ class FullScreenBackground {
 			add_theme_support('post-thumbnails');
 			add_image_size('full_screen_background', 1600, 1200, true);
 		}
+	}
+	
+	/* -------------------------------------------------- */
+	/* Settings button
+	  /* -------------------------------------------------- */
+	public function plugin_action_links($links, $file) {
+		static $current_plugin = '';
+
+		if (!$current_plugin) {
+			$current_plugin = plugin_basename(__FILE__);
+		}
+
+		if ($file == $current_plugin) {
+			$settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/edit.php?post_type=cpt_background&page=options">' . __('Settings', 'scrollup') . '</a>';
+			array_unshift($links, $settings_link);
+			
+			$settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/edit.php?post_type=cpt_background">' . __('Backgrounds', 'scrollup') . '</a>';
+			array_unshift($links, $settings_link);
+		}
+
+		return $links;
 	}
 
 	/* -------------------------------------------------- */
